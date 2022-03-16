@@ -82,7 +82,7 @@ class MainController: UIViewController {
     }
     
     private func configureCollectionViewLayout() {
-        let collectionViewLayout = HorizontalCompositionalLayout(itemsPerRow: 7, contentInsets: 2)
+        let collectionViewLayout = HorizontalCompositionalLayout(itemsPerRow: 7, contentInsets: 3)
         collectionView.collectionViewLayout = collectionViewLayout
     }
     

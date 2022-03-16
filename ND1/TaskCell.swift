@@ -12,26 +12,35 @@ class TaskCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var checkmarkBtn: UIButton!
     @IBOutlet weak var progressBarView: UIView!
+    @IBOutlet weak var checkmarkView: UIView!
     
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        checkmarkView.layer.cornerRadius = (self.checkmarkView.frame.size.width) / 2
+        checkmarkView.layer.borderWidth = 1
+       
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
     var task: Task? {
         didSet {
+            layoutIfNeeded()
             if let task = task {
                 titleLabel.text = task.title
                 descriptionLabel.text = task.description
+                
+                if task.completed {
+                    titleLabel.textColor = .systemGray3
+                    timeLabel.textColor = .systemGray3
+                    descriptionLabel.textColor = .systemGray3
+                    progressBarView.backgroundColor = .systemGray3
+                    checkmarkView.layer.borderColor = UIColor.systemGreen.cgColor
+                    checkmarkView.layer.backgroundColor = UIColor.systemGreen.cgColor
+                   
+                } else {
+                    checkmarkView.layer.borderColor = UIColor.label.cgColor
+                }
             }
         }
     }

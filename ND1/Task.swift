@@ -13,12 +13,14 @@ class Task: Hashable, Equatable {
     var description: String
     var time: Double
     var progress: Double
+    var completed: Bool
     
-    init(title: String, description: String, time: Double, progress: Double) {
+    init(title: String, description: String, time: Double, progress: Double, completed: Bool) {
         self.title = title
         self.description = description
         self.time = time
         self.progress = progress
+        self.completed = completed
     }
     
     func hash(into hasher: inout Hasher) {

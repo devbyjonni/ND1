@@ -23,17 +23,17 @@ class MainModel {
     
     func preloadData() {
         var tempData = [Task]()
-        tempData.append(Task(title: "Workout", description: "Some description", time: 30, progress: 100))
-        tempData.append(Task(title: "Meditate", description: "Some description", time: 30, progress: 100))
-        tempData.append(Task(title: "Code lessons", description: "Some description", time: 30, progress: 100))
-        tempData.append(Task(title: "Medicin", description: "Some description", time: 30, progress: 100))
+        tempData.append(Task(title: "Workout", description: "Some description", time: 30, progress: 100, completed: false))
+        tempData.append(Task(title: "Meditate", description: "Some description", time: 30, progress: 100, completed: false))
+        tempData.append(Task(title: "Code lessons", description: "Some description", time: 30, progress: 100, completed: false))
+        tempData.append(Task(title: "Medicin", description: "Some description", time: 30, progress: 100, completed: true))
         data = tempData
     }
     
     func preloadCalendarDates() {
         var tempData = [CalendarDate]()
         tempData.append(CalendarDate(date: Date(), weekDay: "mon", progress: 100))
-        tempData.append(CalendarDate(date: Date(), weekDay: "tuw", progress: 100))
+        tempData.append(CalendarDate(date: Date(), weekDay: "tue", progress: 100))
         tempData.append(CalendarDate(date: Date(), weekDay: "wed", progress: 100))
         tempData.append(CalendarDate(date: Date(), weekDay: "thu", progress: 100))
         tempData.append(CalendarDate(date: Date(), weekDay: "fri", progress: 100))
@@ -41,7 +41,7 @@ class MainModel {
         tempData.append(CalendarDate(date: Date(), weekDay: "sun", progress: 100))
         
         tempData.append(CalendarDate(date: Date(), weekDay: "mon", progress: 100))
-        tempData.append(CalendarDate(date: Date(), weekDay: "tuw", progress: 100))
+        tempData.append(CalendarDate(date: Date(), weekDay: "tue", progress: 100))
         tempData.append(CalendarDate(date: Date(), weekDay: "wed", progress: 100))
         tempData.append(CalendarDate(date: Date(), weekDay: "thu", progress: 100))
         tempData.append(CalendarDate(date: Date(), weekDay: "fri", progress: 100))
